@@ -9,9 +9,9 @@ namespace ariel
     {
 
         private:
-        class Node
+        struct Node
         {
-            private:
+            
                 T node_val;
                 Node *r_node;
                 Node *l_node;
@@ -27,14 +27,9 @@ namespace ariel
         Node* root;
 
     public:
-        BinaryTree()
-        {
-
-        }
-        ~BinaryTree()
-        {
-
-        }
+    
+        BinaryTree(){ }
+        ~BinaryTree(){ }
         BinaryTree <T> &add_root(const T &t1){
             return *this;
         }
@@ -58,6 +53,7 @@ namespace ariel
             private:
                 Node *curr_node;
             public:
+            
                 Pre_iterator(Node* ptr= nullptr): curr_node(ptr){
                     
                 }
@@ -83,6 +79,7 @@ namespace ariel
                 {
                     return curr_node!=other.curr_node;
                 }
+            
 
         };
 
@@ -91,6 +88,7 @@ namespace ariel
             private:
                 Node *curr_node;
             public:
+            
                 Post_iterator(Node* ptr= nullptr): curr_node(ptr){
                     
                 }
@@ -116,6 +114,7 @@ namespace ariel
                 {
                     return curr_node!=other.curr_node;
                 }
+            
 
         };
 
@@ -148,6 +147,7 @@ namespace ariel
                 {
                     return curr_node!=other.curr_node;
                 }
+            
 
         };
 
@@ -175,6 +175,7 @@ namespace ariel
         In_iterator end_postorder() {
             return In_iterator(root);
         }
+    
     };
 
 
